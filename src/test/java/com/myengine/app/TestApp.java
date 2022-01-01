@@ -23,5 +23,13 @@ public class TestApp {
 		String actionList = thisVideo.orderAction();
 		assertEquals(actionList, "PackingslipAction");
 	    }
+	 
+	 @Test
+	    public void VideoLearningToSkiShouldGenerateAdditionalPacking() {
+		 MovieVideo thisVideo = new MovieVideo();
+		thisVideo.title = "Learning to Ski";
+		String actionList = thisVideo.orderAction();
+		assertEquals(actionList, "PackingslipAction, PackingFirstAid");
+	    }
 	   
 }
