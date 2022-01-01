@@ -3,6 +3,8 @@ package com.myengine.app;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import com.myengine.product.Book;
@@ -45,5 +47,9 @@ public class TestApp {
 		String actionList = thisMembershipUpgrade.orderAction();
 		assertEquals(actionList, "MembershipUpgradeAction, MembershipUpgradeEmail");
 	    }
-	   
+	    @Test
+	    public void shouldAnswerWithTrue()
+	    {
+	        assertTrue( true );
+	    }
 }
