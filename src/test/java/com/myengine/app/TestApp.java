@@ -4,7 +4,9 @@ package com.myengine.app;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
 import com.myengine.product.Book;
+import com.myengine.product.MovieVideo;
 
 public class TestApp {
 	
@@ -15,6 +17,11 @@ public class TestApp {
 		assertEquals(actionList, "PackingslipAction, RoyaltyOrderAction");
 		
 	    }
-	   
+	 @Test
+	    public void VideoProductShouldGeneratePacking () {
+		MovieVideo thisVideo = new MovieVideo();
+		String actionList = thisVideo.orderAction();
+		assertEquals(actionList, "PackingslipAction");
+	    }
 	   
 }
