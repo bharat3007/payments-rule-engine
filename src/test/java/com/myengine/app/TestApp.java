@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.myengine.product.Book;
 import com.myengine.product.MovieVideo;
+import com.myengine.product.UpgradeMembership;
 
 public class TestApp {
 	
@@ -30,6 +31,19 @@ public class TestApp {
 		thisVideo.title = "Learning to Ski";
 		String actionList = thisVideo.orderAction();
 		assertEquals(actionList, "PackingslipAction, PackingFirstAid");
+	    }
+	 @Test
+	    public void MembershipShouldActivateAndSendEmail() {
+		com.myengine.product.Membership thisMembership = new com.myengine.product.Membership();
+		String actionList = thisMembership.orderAction();
+		assertEquals(actionList, "MembershipActivationAction, MembershipActivationEmail");
+	    }
+
+	    @Test
+	    public void MembershipUpgradeShouldUpgradeAndSendEmail() {
+	    	UpgradeMembership thisMembershipUpgrade = new UpgradeMembership();
+		String actionList = thisMembershipUpgrade.orderAction();
+		assertEquals(actionList, "MembershipUpgradeAction, MembershipUpgradeEmail");
 	    }
 	   
 }
